@@ -20,10 +20,10 @@ import java.util.Objects;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThemeFragment extends ListFragment {
+public class ThemesFragment extends ListFragment {
     private String[] themes = new String[]{"Красная", "Синяя", "Желтая"};
 
-    public ThemeFragment() {
+    public ThemesFragment() {
         // Required empty public constructor
     }
 //

@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar list_themes clicks here. The action bar will
+        // Handle action bar fragment_themes clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.theme_settings) {
-            setContentView(R.layout.list_themes);
+            setContentView(R.layout.fragment_themes);
             return true;
         }
 
