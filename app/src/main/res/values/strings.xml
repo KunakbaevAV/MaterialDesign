@@ -7,4 +7,6 @@
     <string name="array_themes">Список тем</string>
     <string name="you_name">Ваше имя</string>
     <string name="you_surname">Ваша фамилия</string>
+    <string name="pull_up">Потяни вверх</string>
+    <string name="surprise">Сюрприз!</string>
 </resources>

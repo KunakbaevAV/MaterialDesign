@@ -4,17 +4,21 @@ import android.os.Bundle;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private String userName;
     private String userSurname;
 
+    BottomSheetBehavior bottomSheetBehavior;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initUI();
+        initBottomSheet();
     }
 
     private void initUI() {
@@ -43,10 +50,32 @@ public class MainActivity extends AppCompatActivity {
             saveUser();
             checkRegistration();
         });
-
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
+        fab.setOnClickListener(view ->
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED));
+    }
+
+    private void initBottomSheet() {
+        LinearLayout linearLayout = findViewById(R.id.bottom_sheet);
+        bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
+        TextView bottomText = findViewById(R.id.bottom_text);
+        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+                if (slideOffset > 0) {
+                    inputName.setAlpha(1f - slideOffset);
+                    inputSurname.setAlpha(1f - slideOffset);
+                    buttonBegin.setAlpha(1f - slideOffset * 2);
+                    bottomText.setAlpha(slideOffset);
+                }
+            }
+        });
     }
 
     private void checkRegistration() {
