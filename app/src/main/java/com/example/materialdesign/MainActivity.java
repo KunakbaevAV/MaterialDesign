@@ -16,7 +16,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private String userSurname;
 
     BottomSheetBehavior bottomSheetBehavior;
+
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             saveUser();
             checkRegistration();
         });
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(view ->
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED));
     }
@@ -58,11 +59,18 @@ public class MainActivity extends AppCompatActivity {
     private void initBottomSheet() {
         LinearLayout linearLayout = findViewById(R.id.bottom_sheet);
         bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
+        TextView bottomLabel = findViewById(R.id.bottom_label);
         TextView bottomText = findViewById(R.id.bottom_text);
+        fab.setAlpha(0f);
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-
+                if (newState == 3) {
+                    fab.setAlpha(1f);
+                    YoYo.with(Techniques.Pulse).repeat(4).playOn(fab);
+                } else if (newState == 4) {
+                    YoYo.with(Techniques.ZoomOut).playOn(fab);
+                }
             }
 
             @Override

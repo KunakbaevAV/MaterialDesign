@@ -30,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/btn_star"
         app:layout_anchor="@+id/bottom_sheet"
-        app:layout_anchorGravity="end" />
+        app:layout_anchorGravity="end"
+        app:srcCompat="@drawable/ic_arrow_downward_black_48dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
