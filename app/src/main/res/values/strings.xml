@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">MaterialDesign</string>
-    <string name="action_settings">Settings</string>
+    <string name="theme_settings">Цветовая тема</string>
+    <string name="choose_theme">Выбор цветовой темы</string>
+    <string name="beginWork">Начать</string>
+    <string name="apply">Применить</string>
+    <string name="array_themes">Список тем</string>
+    <string name="you_name">Ваше имя</string>
+    <string name="you_surname">Ваша фамилия</string>
+    <string name="pull_up">Потяни вверх</string>
+    <string name="surprise">Сюрприз!</string>
 </resources>
