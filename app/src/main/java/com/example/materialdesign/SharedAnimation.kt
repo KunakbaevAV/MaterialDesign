@@ -16,7 +16,6 @@ fun changeFragment(fragmentManager: FragmentManager?, nextFragment: Fragment, im
 
     fragmentManager!!.beginTransaction()
             .replace(R.id.container, nextFragment)
-            .addToBackStack(nextFragment.javaClass.name)
             .addSharedElement(image, image.transitionName)
             .commit()
 }

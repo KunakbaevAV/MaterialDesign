@@ -15,7 +15,7 @@ class FragmentDashboard : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
         myAndroid = view.findViewById(R.id.android)
-        myAndroid.setOnClickListener { v -> changeFragment(fragmentManager, FragmentHome(), myAndroid) }
+        myAndroid.setOnClickListener { _ -> changeFragment(fragmentManager, FragmentHome(), myAndroid) }
         return view
     }
 

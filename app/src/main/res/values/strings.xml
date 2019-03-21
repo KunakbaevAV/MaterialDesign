@@ -14,7 +14,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_blank_fragment_2">Hello blank fragment 2</string>
     <string name="dashboard">Панель настроек</string>
@@ -22,4 +21,9 @@
     <string name="notifications">Уведомления</string>
     <string name="number_messages">123</string>
     <string name="андроид">android</string>
+
+    <string name="dialog_title">Заголовок</string>
+    <string name="dialog_text">Тут текст материального диалога</string>
+    <string name="dialog_ok">Агась</string>
+    <string name="dialog_no">Нееее</string>
 </resources>

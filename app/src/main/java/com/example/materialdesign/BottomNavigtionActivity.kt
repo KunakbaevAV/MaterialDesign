@@ -1,6 +1,7 @@
 package com.example.materialdesign
 
-import android.animation.ValueAnimator
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_bottom_navigtion.*
 
 class BottomNavigtionActivity : AppCompatActivity() {
+//    lateinit var messageBadge: TextView
+//    lateinit var messageCount: SharedPreferences
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -32,13 +35,15 @@ class BottomNavigtionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_navigtion)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+//        messageBadge = findViewById(R.id.message)
+//        updateMessageBadge()
         openFragment(FragmentHome())
 
     }
-
     fun openFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit()
     }
+
 }
