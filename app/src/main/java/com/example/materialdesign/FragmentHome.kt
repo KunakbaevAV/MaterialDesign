@@ -12,11 +12,8 @@ import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.*
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
-import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate
 import com.google.android.material.snackbar.Snackbar
 
 class FragmentHome : Fragment() {
@@ -60,8 +57,10 @@ class FragmentHome : Fragment() {
                 adapter.delete(viewHolder.adapterPosition)
             }
         })
-
         itemTouchHelper.attachToRecyclerView(recycler)
+
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(recycler)
 
         return view
     }
