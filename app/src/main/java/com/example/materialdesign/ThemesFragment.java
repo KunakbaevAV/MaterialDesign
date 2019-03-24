@@ -28,13 +28,7 @@ public class ThemesFragment extends ListFragment {
     private String[] themes = new String[]{"Красная", "Синяя", "Желтая"};
 
     public ThemesFragment() {
-        // Required empty public constructor
     }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_theme, null);
-//    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
