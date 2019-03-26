@@ -26,4 +26,5 @@
     <string name="dialog_text">Тут текст материального диалога</string>
     <string name="dialog_ok">Агась</string>
     <string name="dialog_no">Нееее</string>
+    <string name="contentDesc">content</string>
 </resources>

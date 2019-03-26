@@ -6,6 +6,7 @@ import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.materialdesign.R
 
 fun changeFragment(fragmentManager: FragmentManager?, nextFragment: Fragment, image: ImageView) {
     val changeBounds = ChangeBounds()
