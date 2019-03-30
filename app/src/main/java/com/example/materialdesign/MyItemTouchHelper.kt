@@ -1,5 +1,6 @@
 package com.example.materialdesign
 
+import android.graphics.Canvas
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.interfaces.DraggableViewHolder
@@ -38,10 +39,25 @@ class MyItemTouchHelper(adapter: CardRecyclerAdapter) {
                 viewHolder.onClear()
             }
         }
+
+        override fun onChildDraw(c: Canvas,
+                                 recyclerView: RecyclerView,
+                                 viewHolder: RecyclerView.ViewHolder,
+                                 dX: Float,
+                                 dY: Float,
+                                 actionState: Int,
+                                 isCurrentlyActive: Boolean) {
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+            if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                val width = viewHolder.itemView.width
+                viewHolder.itemView.alpha = 1 - Math.abs(dX / width)
+                viewHolder.itemView.scaleX = 1 - Math.abs(dX / width)
+                viewHolder.itemView.scaleY = 1 - Math.abs(dX / width)
+            }
+        }
     })
 
     fun attachToRecyclerView(recyclerView: RecyclerView) {
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
-
 }

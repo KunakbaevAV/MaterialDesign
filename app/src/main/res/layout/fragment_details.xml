@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background_space">
+    android:background="@drawable/background_space"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/card_title"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:paddingStart="4dp"
         android:paddingTop="4dp"
         android:paddingEnd="4dp"
         android:paddingBottom="4dp"
-        android:textSize="40sp"
         android:textColor="@android:color/background_light"
-        tools:text="Название карты"
-        android:textStyle="bold" />
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:text="Название карты" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -28,18 +28,10 @@
             android:id="@+id/card_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            tools:src="@drawable/ship01"
+            android:contentDescription="@string/contentDesc"
             android:transitionName="card_image"
-            android:contentDescription="@string/contentDesc" />
+            tools:src="@drawable/ship01" />
 
-        <TextView
-            android:id="@+id/card_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Описание карты"
-            android:layout_gravity="bottom"
-            android:textColor="@android:color/background_light"
-            android:textSize="30sp" />
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -50,22 +42,30 @@
                 android:id="@+id/icon_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:contentDescription="@string/contentDesc"
-                tools:src="@drawable/icon_coin"
-                android:layout_gravity="center" />
+                tools:src="@drawable/icon_coin" />
 
             <TextView
                 android:id="@+id/icon_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
                 android:textSize="40sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center" />
+                tools:text="1" />
 
         </FrameLayout>
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/card_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        tools:text="Описание карты" />
 </LinearLayout>

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.*
-import com.example.materialdesign.interfaces.DraggableViewHolder
 
 class FragmentHome : Fragment() {
     lateinit var recycler: RecyclerView
