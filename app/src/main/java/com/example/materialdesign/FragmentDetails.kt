@@ -1,7 +1,11 @@
 package com.example.materialdesign
 
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.BackgroundColorSpan
 import android.transition.ChangeBounds
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,20 +28,34 @@ class FragmentDetails() : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_details, container, false)
-        title = view.findViewById(R.id.card_title)
-        description = view.findViewById(R.id.card_description)
-        image = view.findViewById(R.id.card_image)
-        icon_type = view.findViewById(R.id.icon_type)
-        icon_number = view.findViewById(R.id.icon_number)
+        initUI(view)
+        updateUI()
+        useSpannebleString()
 
+        return view
+    }
+
+    private fun useSpannebleString() {
+        val spannableString = SpannableString(title.text)
+        val backgroundColorSpan = BackgroundColorSpan(Color.parseColor("#71FFFF9A"))
+        spannableString.setSpan(backgroundColorSpan, 0, title.text.length, Spanned.SPAN_COMPOSING)
+        title.text = spannableString
+    }
+
+    private fun updateUI() {
         title.text = card.title
         description.text = card.description
         image.setImageResource(card.image)
         icon_type.setImageResource(card.iconType)
         icon_number.text = "1"
+    }
 
-        return view
+    private fun initUI(view: View) {
+        title = view.findViewById(R.id.card_title)
+        description = view.findViewById(R.id.card_description)
+        image = view.findViewById(R.id.card_image)
+        icon_type = view.findViewById(R.id.icon_type)
+        icon_number = view.findViewById(R.id.icon_number)
     }
 }
