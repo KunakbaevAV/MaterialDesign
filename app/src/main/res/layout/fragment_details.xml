@@ -15,6 +15,7 @@
         android:paddingTop="4dp"
         android:paddingEnd="4dp"
         android:paddingBottom="4dp"
+        android:fontFamily="@font/rose_family"
         android:textColor="@android:color/background_light"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -65,6 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:fontFamily="@font/rose_family"
         android:textColor="@android:color/background_light"
         android:textSize="30sp"
         tools:text="Описание карты" />
