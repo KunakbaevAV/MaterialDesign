@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.*
+import com.example.materialdesign.interfaces.DraggableViewHolder
 
 class FragmentHome : Fragment() {
     lateinit var recycler: RecyclerView
@@ -21,32 +22,15 @@ class FragmentHome : Fragment() {
         recycler.layoutManager = LinearLayoutManager(view.context)
         recycler.adapter = adapter
 
-        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.Callback() {
-            override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {
-                val dragFlags = ItemTouchHelper.UP or ItemTouchHelper.DOWN
-                val swipeFlags = ItemTouchHelper.START or ItemTouchHelper.END
-                return makeMovementFlags(dragFlags, swipeFlags)
-            }
-
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-                adapter.move(viewHolder.adapterPosition, target.adapterPosition)
-                return true
-            }
-
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                adapter.delete(viewHolder.adapterPosition)
-            }
-
-            override fun isLongPressDragEnabled(): Boolean {
-                return super.isLongPressDragEnabled()
-            }
-        })
+        val itemTouchHelper = MyItemTouchHelper(adapter)
         itemTouchHelper.attachToRecyclerView(recycler)
 
-//        val snapHelper = LinearSnapHelper()
-//        snapHelper.attachToRecyclerView(recycler)
 
         return view
     }
 
 }
+
+// Центровка карточки посередине
+//        val snapHelper = LinearSnapHelper()
+//        snapHelper.attachToRecyclerView(recycler)

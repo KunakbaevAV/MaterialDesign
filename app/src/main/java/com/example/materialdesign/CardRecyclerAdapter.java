@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.materialdesign.interfaces.CardOpener;
+import com.example.materialdesign.interfaces.DraggableViewHolder;
 import com.example.materialdesign.model.Card;
 
 import org.jetbrains.annotations.NotNull;
@@ -86,7 +87,7 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
         }
     }
 
-    class CardViewHolder extends RecyclerView.ViewHolder implements CardOpener {
+    class CardViewHolder extends RecyclerView.ViewHolder implements DraggableViewHolder {
         TextView textTitle;
         TextView textDescription;
         ImageView imageView;
@@ -99,8 +100,13 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
         }
 
         @Override
-        public void openCard(@NotNull Card card) {
+        public void onSelected() {
+            itemView.animate().scaleX(0.8f).scaleY(0.8f).setDuration(400);
+        }
 
+        @Override
+        public void onClear() {
+            itemView.animate().scaleX(1f).scaleY(1f).setDuration(400);
         }
     }
 
