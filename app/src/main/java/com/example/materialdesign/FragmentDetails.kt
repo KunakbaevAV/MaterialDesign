@@ -31,7 +31,7 @@ class FragmentDetails() : Fragment() {
         val view = inflater.inflate(R.layout.fragment_details, container, false)
         initUI(view)
         updateUI()
-        useSpannebleString()
+//        useSpannebleString()
 
         return view
     }

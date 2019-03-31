@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,47 +10,69 @@
     android:layout_marginBottom="4dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="2"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/card_image"
-            android:layout_width="200dp"
-            android:layout_height="120dp"
-            android:src="@drawable/ship03"
-            android:transitionName="card_image"
-            android:contentDescription="@string/dashboard" />
+        <!--<com.google.android.material.button.MaterialButton
+            android:id="@+id/button_chosen"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            app:icon="@android:drawable/btn_star_big_on"
+            app:rippleColor="@android:color/holo_orange_dark"
+            android:backgroundTint="@android:color/background_dark"
+            app:cornerRadius="30sp"
+            android:alpha="0.6"/>-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:columnCount="2"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/card_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingStart="@dimen/text_margin"
-                android:paddingTop="4dp"
-                android:paddingEnd="@dimen/text_margin"
-                android:paddingBottom="4dp"
-                android:textSize="18sp"
-                tools:text="@string/dialog_title" />
+            <ImageView
+                android:id="@+id/card_image"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/dashboard"
+                android:src="@drawable/ship03"
+                android:transitionName="card_image" />
 
-            <TextView
-                android:id="@+id/card_description"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:text="@string/dashboard"
-                android:gravity="center" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/card_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/text_margin"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="@dimen/text_margin"
+                    android:paddingBottom="4dp"
+                    android:textSize="18sp"
+                    tools:text="@string/dialog_title" />
+
+                <TextView
+                    android:id="@+id/card_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    tools:text="@string/dashboard" />
+            </LinearLayout>
         </LinearLayout>
 
-
-    </LinearLayout>
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:checkable="true"
+            app:chipIcon="@android:drawable/star_big_on"
+            app:chipIconTint="@android:color/white"
+            app:checkedIcon="@drawable/ic_star_orange_400_24dp" />
+    </FrameLayout>
 
 
 </androidx.cardview.widget.CardView>
