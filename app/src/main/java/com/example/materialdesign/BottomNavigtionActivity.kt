@@ -4,14 +4,12 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
+import com.example.materialdesign.fragments.FragmentNotifications
+import com.example.materialdesign.fragments.FragmentRecycler
+import com.example.materialdesign.fragments.FragmentViewPager
 import kotlinx.android.synthetic.main.activity_bottom_navigtion.*
 
 class BottomNavigtionActivity : AppCompatActivity() {
-//    lateinit var messageBadge: TextView
-//    lateinit var messageCount: SharedPreferences
-
-    lateinit var vievPager: ViewPager
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -35,9 +33,6 @@ class BottomNavigtionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_navigtion)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-//        messageBadge = findViewById(R.id.message)
-//        updateMessageBadge()
-
         openFragment(FragmentRecycler())
 
     }

@@ -1,4 +1,4 @@
-package com.example.materialdesign.pageTransformations
+package com.example.materialdesign.utils.pageTransformations
 
 import android.view.View
 import androidx.viewpager.widget.ViewPager

@@ -1,8 +1,9 @@
-package com.example.materialdesign
+package com.example.materialdesign.utils.recycler
 
 import android.graphics.Canvas
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.example.materialdesign.utils.recycler.CardRecyclerAdapter
 import com.example.materialdesign.interfaces.DraggableViewHolder
 
 class MyItemTouchHelper internal constructor(adapter: CardRecyclerAdapter) {

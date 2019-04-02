@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.example.materialdesign.R
+import com.example.materialdesign.utils.DrawableUtils
 
-class FragmentDashboard : Fragment() {
+class FragmentAnimated : Fragment() {
     lateinit var myAndroid: ImageView
     lateinit var drawableUtils: DrawableUtils
     var isStarted = false

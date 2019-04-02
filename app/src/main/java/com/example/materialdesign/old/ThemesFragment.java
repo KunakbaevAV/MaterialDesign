@@ -1,4 +1,4 @@
-package com.example.materialdesign;
+package com.example.materialdesign.old;
 
 
 import android.app.Activity;
@@ -17,6 +17,8 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.materialdesign.R;
 
 import java.util.Objects;
 

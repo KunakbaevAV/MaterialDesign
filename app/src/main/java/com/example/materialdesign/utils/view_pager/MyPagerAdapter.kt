@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.utils.view_pager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

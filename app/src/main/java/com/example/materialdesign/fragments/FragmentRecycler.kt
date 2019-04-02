@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.fragments
 
 
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.*
+import com.example.materialdesign.R
+import com.example.materialdesign.utils.recycler.CardRecyclerAdapter
+import com.example.materialdesign.utils.recycler.MyItemTouchHelper
 
 class FragmentRecycler : Fragment() {
     lateinit var recycler: RecyclerView
@@ -14,7 +17,7 @@ class FragmentRecycler : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_recycler, container, false)
 
         adapter = CardRecyclerAdapter(this)
         recycler = view.findViewById(R.id.recycler)

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/last_themes"
-        android:name="com.example.materialdesign.ThemesFragment"
+        android:name="com.example.materialdesign.old.ThemesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

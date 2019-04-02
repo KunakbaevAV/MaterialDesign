@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.utils
 
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Build

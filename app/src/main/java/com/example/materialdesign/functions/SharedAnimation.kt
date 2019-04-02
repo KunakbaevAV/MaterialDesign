@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.functions
 
 import android.transition.ArcMotion
 import android.transition.ChangeBounds

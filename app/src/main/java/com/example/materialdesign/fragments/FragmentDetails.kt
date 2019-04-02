@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.fragments
 
 
 import android.graphics.Color
@@ -6,15 +6,13 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.BackgroundColorSpan
-import android.transition.ChangeBounds
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.transition.ArcMotion
+import com.example.materialdesign.R
 import com.example.materialdesign.model.Card
 
 class FragmentDetails() : Fragment() {

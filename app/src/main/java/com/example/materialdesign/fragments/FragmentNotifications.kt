@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.fragments
 
 
 import android.content.Context
@@ -12,6 +12,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
+import com.example.materialdesign.MESSAGE_COUNT
+import com.example.materialdesign.MY_PREFERENCES
+import com.example.materialdesign.R
 import com.google.android.material.button.MaterialButton
 
 class FragmentNotifications : Fragment() {

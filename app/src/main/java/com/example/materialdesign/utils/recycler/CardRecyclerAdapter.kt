@@ -1,4 +1,4 @@
-package com.example.materialdesign
+package com.example.materialdesign.utils.recycler
 
 import android.transition.ArcMotion
 import android.transition.ChangeBounds
@@ -10,11 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 
 import com.example.materialdesign.interfaces.DraggableViewHolder
-import com.example.materialdesign.model.Card
 
-import java.util.ArrayList
 import java.util.Collections
 import androidx.recyclerview.widget.RecyclerView
+import com.example.materialdesign.fragments.FragmentDetails
+import com.example.materialdesign.fragments.FragmentRecycler
+import com.example.materialdesign.R
 
 import com.example.materialdesign.model.getCards
 
