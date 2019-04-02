@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.interfaces.DraggableViewHolder
 
-class MyItemTouchHelper(adapter: CardRecyclerAdapter) {
+class MyItemTouchHelper internal constructor(adapter: CardRecyclerAdapter) {
 
     val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.Callback() {
         override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {

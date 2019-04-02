@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.*
 
 class FragmentRecycler : Fragment() {
     lateinit var recycler: RecyclerView
-    lateinit var adapter: CardRecyclerAdapter
+    internal lateinit var adapter: CardRecyclerAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
