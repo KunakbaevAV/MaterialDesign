@@ -10,19 +10,34 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
+import com.google.android.material.button.MaterialButton
 
 class FragmentNotifications : Fragment() {
     lateinit var messageCount: SharedPreferences
     lateinit var message: TextView
+    lateinit var buttonReg: MaterialButton
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_notifications, container, false)
-        val bell = view.findViewById<ImageView>(R.id.bell)
-        message = view.findViewById(R.id.message)
-        bell.setOnClickListener { showDialog() }
+        initBellUI(view)
+        initButtonReg(view)
         return view
+    }
+
+    private fun initButtonReg(view: View) {
+        buttonReg = view.findViewById(R.id.button_reg)
+        buttonReg.setOnClickListener {
+            Toast.makeText(context, "Пока не реализовано", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun initBellUI(view: View) {
+        val bell = view.findViewById<ImageView>(R.id.bell)
+        bell.setOnClickListener { showDialogBell() }
+        message = view.findViewById(R.id.message)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,7 +45,7 @@ class FragmentNotifications : Fragment() {
         updateMessageBadge()
     }
 
-    private fun showDialog() {
+    private fun showDialogBell() {
         val materialDialog = context?.let { MaterialDialog(it) }
         materialDialog?.show() {
             icon(R.drawable.ic_android_green_600_36dp)
