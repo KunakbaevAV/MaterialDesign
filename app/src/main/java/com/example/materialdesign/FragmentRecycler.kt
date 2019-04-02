@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.*
 
-class FragmentHome : Fragment() {
+class FragmentRecycler : Fragment() {
     lateinit var recycler: RecyclerView
     lateinit var adapter: CardRecyclerAdapter
 
@@ -23,7 +23,6 @@ class FragmentHome : Fragment() {
 
         val itemTouchHelper = MyItemTouchHelper(adapter)
         itemTouchHelper.attachToRecyclerView(recycler)
-
 
         return view
     }

@@ -1,26 +1,26 @@
 package com.example.materialdesign
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_bottom_navigtion.*
 
 class BottomNavigtionActivity : AppCompatActivity() {
 //    lateinit var messageBadge: TextView
 //    lateinit var messageCount: SharedPreferences
 
+    lateinit var vievPager: ViewPager
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                openFragment(FragmentHome())
+                openFragment(FragmentRecycler())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                openFragment(FragmentDashboard())
+                openFragment(FragmentViewPager())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
@@ -37,12 +37,14 @@ class BottomNavigtionActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 //        messageBadge = findViewById(R.id.message)
 //        updateMessageBadge()
-        openFragment(FragmentHome())
+
+        openFragment(FragmentRecycler())
 
     }
     fun openFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
+                .addToBackStack("backStack")
                 .commit()
     }
 

@@ -1,37 +1,30 @@
 package com.example.materialdesign;
 
-import android.content.Context;
 import android.transition.ArcMotion;
 import android.transition.ChangeBounds;
-import android.transition.PathMotion;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.materialdesign.interfaces.CardOpener;
 import com.example.materialdesign.interfaces.DraggableViewHolder;
 import com.example.materialdesign.model.Card;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import static com.example.materialdesign.model.DeckKt.getCards;
 
 public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapter.CardViewHolder> {
     private ArrayList<Card> cards = getCards();
-    private FragmentHome parent;
+    private FragmentRecycler parent;
 
-    public CardRecyclerAdapter(FragmentHome parent) {
+    public CardRecyclerAdapter(FragmentRecycler parent) {
         this.parent = parent;
     }
 
