@@ -3,23 +3,19 @@ package com.example.materialdesign.utils.recycler
 import android.transition.ArcMotion
 import android.transition.ChangeBounds
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
-import android.widget.ImageView
-import android.widget.TextView
-
-import com.example.materialdesign.interfaces.DraggableViewHolder
-
+import android.widget.Toast
 import java.util.Collections
 import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.fragments.FragmentDetails
 import com.example.materialdesign.fragments.FragmentRecycler
 import com.example.materialdesign.R
-
 import com.example.materialdesign.model.getCards
 
-internal class CardRecyclerAdapter(private val parent: FragmentRecycler) : RecyclerView.Adapter<CardRecyclerAdapter.CardViewHolder>() {
+internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
+    : RecyclerView.Adapter<CardViewHolder>() {
+
     private val cards = getCards()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -33,6 +29,11 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler) : Recyc
         holder.textDescription.text = card.description
         holder.imageView.setImageResource(card.image)
         holder.itemView.setOnClickListener { _ -> showDetails(position) }
+        holder.chip.setOnClickListener { myToast(holder) }
+    }
+
+    private fun myToast(holder: CardViewHolder) {
+        Toast.makeText(parent.context, "hi " + holder.textTitle.text, Toast.LENGTH_SHORT).show()
     }
 
     override fun getItemCount(): Int {
@@ -67,26 +68,6 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler) : Recyc
             parent.fragmentManager!!.beginTransaction()
                     .replace(R.id.container_home, fragment)
                     .addToBackStack("details").commit()
-        }
-    }
-
-    internal inner class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), DraggableViewHolder {
-        var textTitle: TextView
-        var textDescription: TextView
-        var imageView: ImageView
-
-        init {
-            textTitle = itemView.findViewById(R.id.card_title)
-            textDescription = itemView.findViewById(R.id.card_description)
-            imageView = itemView.findViewById(R.id.card_image)
-        }
-
-        override fun onSelected() {
-            itemView.animate().scaleX(0.8f).scaleY(0.8f).duration = 400
-        }
-
-        override fun onClear() {
-            itemView.animate().scaleX(1f).scaleY(1f).duration = 400
         }
     }
 }

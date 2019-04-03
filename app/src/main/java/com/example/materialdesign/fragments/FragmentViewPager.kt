@@ -26,7 +26,7 @@ class FragmentViewPager : Fragment() {
         val adapter = MyPagerAdapter(childFragmentManager)
         adapter.addFragment(newInstance("First", Color.BLUE))
         adapter.addFragment(FragmentAnimated())
-        adapter.addFragment(newInstance("Second", Color.CYAN))
+        adapter.addFragment(FragmentRecyclerChosen())
         adapter.addFragment(newInstance("Third", Color.GREEN))
         viewPager.adapter = adapter
         viewPager.setPageTransformer(false, DepthTransformer())

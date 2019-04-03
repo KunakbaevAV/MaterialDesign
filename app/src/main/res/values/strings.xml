@@ -16,7 +16,7 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_blank_fragment_2">Hello blank fragment 2</string>
-    <string name="dashboard">Панель настроек</string>
+    <string name="animation">Анимация</string>
     <string name="home">Главный экран</string>
     <string name="notifications">Уведомления</string>
     <string name="number_messages">123</string>
