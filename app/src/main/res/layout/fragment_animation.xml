@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FragmentAnimated">
+
+    <TextView
+        android:layout_gravity="top"
+        android:gravity="center_horizontal"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/animation" />
+
+    <ImageView
+        android:id="@+id/my_android"
+        android:transitionName="android"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/android_animated"
+        tools:ignore="ContentDescription" />
+
+</FrameLayout>
