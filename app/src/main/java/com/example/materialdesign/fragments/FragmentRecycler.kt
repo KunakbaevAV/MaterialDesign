@@ -17,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragmentRecycler : Fragment(), ChosenDeck {
     override fun getDeck(): ArrayList<Card> {
-        return chosenCards
+        return chosenCards //как это передать в другой фрагмент в FragmentViewPager?
     }
 
     var chosenCards = ArrayList<Card>()
