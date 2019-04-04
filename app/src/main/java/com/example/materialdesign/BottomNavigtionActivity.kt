@@ -7,18 +7,22 @@ import androidx.fragment.app.Fragment
 import com.example.materialdesign.fragments.FragmentNotifications
 import com.example.materialdesign.fragments.FragmentRecycler
 import com.example.materialdesign.fragments.FragmentViewPager
+import com.example.materialdesign.model.Card
 import kotlinx.android.synthetic.main.activity_bottom_navigtion.*
 
 class BottomNavigtionActivity : AppCompatActivity() {
+    var fragmentRecycler = FragmentRecycler()
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_recycler -> {
-                openFragment(FragmentRecycler())
+                openFragment(fragmentRecycler)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_view_pager -> {
-                openFragment(FragmentViewPager())
+                val fragment = FragmentViewPager()
+                openFragment(fragment)
+                fragment.chosenCards = fragmentRecycler.getDeck()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {

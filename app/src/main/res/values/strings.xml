@@ -10,8 +10,8 @@
     <string name="pull_up">Потяни вверх</string>
     <string name="surprise">Сюрприз!</string>
     <string name="title_activity_bottom_navigtion">BottomNavigtionActivity</string>
-    <string name="title_recycler">Список карточек</string>
-    <string name="title_view_pager">Слайдер фрагментов</string>
+    <string name="title_recycler">Все карточки</string>
+    <string name="title_chosen_cards">Выбранные карточки</string>
     <string name="title_notifications">Уведомления</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

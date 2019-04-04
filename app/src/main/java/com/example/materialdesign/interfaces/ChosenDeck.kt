@@ -2,6 +2,6 @@ package com.example.materialdesign.interfaces
 
 import com.example.materialdesign.model.Card
 
-interface ChoosenDeck {
+interface ChosenDeck {
     fun getDeck(): ArrayList<Card>
 }

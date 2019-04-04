@@ -8,16 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.R
 import com.example.materialdesign.model.Card
 import java.util.*
+import kotlin.collections.ArrayList
 
-internal class ChosenRecyclerAdapter(private val parent: Fragment)
+internal class ChosenRecyclerAdapter(private val parent: Fragment, val chosenCards: ArrayList<Card>)
     : RecyclerView.Adapter<CardViewHolder>() {
 
-    private val chosenCards = ArrayList<Card>()
-
-    init {
-        chosenCards.add(Card("Разведчик", "Исследует космос", R.drawable.ship01, R.drawable.icon_coin))
-        chosenCards.add(Card("Торговец", "Добывает деньги", R.drawable.ship02, R.drawable.icon_coin))
-    }
+//    private val chosenCards = ArrayList<Card>()
+//    init {
+//        chosenCards.add(Card("Разведчик", "Исследует космос", R.drawable.ship01, R.drawable.icon_coin))
+//        chosenCards.add(Card("Торговец", "Добывает деньги", R.drawable.ship02, R.drawable.icon_coin))
+//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card, parent, false)
