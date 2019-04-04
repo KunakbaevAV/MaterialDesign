@@ -13,11 +13,11 @@ class BottomNavigtionActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
+            R.id.navigation_recycler -> {
                 openFragment(FragmentRecycler())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_view_pager -> {
                 openFragment(FragmentViewPager())
                 return@OnNavigationItemSelectedListener true
             }

@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.fragments.FragmentDetails
 import com.example.materialdesign.fragments.FragmentRecycler
 import com.example.materialdesign.R
+import com.example.materialdesign.interfaces.ChoosenDeck
+import com.example.materialdesign.model.Card
 import com.example.materialdesign.model.getCards
 
 internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
-    : RecyclerView.Adapter<CardViewHolder>() {
+    : RecyclerView.Adapter<CardViewHolder>(), ChoosenDeck {
 
     private val cards = getCards()
 
@@ -69,6 +71,10 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
                     .replace(R.id.container_home, fragment)
                     .addToBackStack("details").commit()
         }
+    }
+
+    override fun getDeck(): ArrayList<Card> {
+        return cards
     }
 }
 

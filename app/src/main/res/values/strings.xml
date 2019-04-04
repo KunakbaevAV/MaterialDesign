@@ -10,8 +10,8 @@
     <string name="pull_up">Потяни вверх</string>
     <string name="surprise">Сюрприз!</string>
     <string name="title_activity_bottom_navigtion">BottomNavigtionActivity</string>
-    <string name="title_home">Главная</string>
-    <string name="title_animation">Анимация</string>
+    <string name="title_recycler">Список карточек</string>
+    <string name="title_view_pager">Слайдер фрагментов</string>
     <string name="title_notifications">Уведомления</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -24,8 +24,6 @@
 
     <string name="dialog_title">Заголовок</string>
     <string name="dialog_text">Тут текст материального диалога</string>
-    <string name="dialog_ok">Агась</string>
-    <string name="dialog_no">Нееее</string>
     <string name="contentDesc">content</string>
     <string name="add">Выбрать</string>
     <string name="registration">Регистрация</string>

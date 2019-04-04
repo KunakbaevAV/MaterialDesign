@@ -12,5 +12,14 @@
         android:layout_marginBottom="60dp"
         tools:listItem="@layout/item_card" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:id="@+id/button_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_play_arrow_black_36dp" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
