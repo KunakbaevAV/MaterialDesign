@@ -13,6 +13,7 @@ import com.example.materialdesign.fragments.FragmentRecycler
 import com.example.materialdesign.R
 import com.example.materialdesign.interfaces.ChosenDeck
 import com.example.materialdesign.model.Card
+import com.example.materialdesign.model.CardRepository
 import com.example.materialdesign.model.getCards
 
 internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
@@ -35,6 +36,7 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
         val name = holder.textTitle.text
         holder.chip.setOnCheckedChangeListener { buttonView, isChecked ->
             chosenCards.add(cards.get(position))
+            CardRepository.instance.cards = chosenCards
             myToast("$name добавлен в избранное")
         }
     }
