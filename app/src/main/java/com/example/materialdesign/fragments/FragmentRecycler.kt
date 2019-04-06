@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.*
 import com.example.materialdesign.R
 import com.example.materialdesign.interfaces.ChosenDeck
 import com.example.materialdesign.model.Card
+import com.example.materialdesign.model.CardRepository
 import com.example.materialdesign.utils.recycler.CardRecyclerAdapter
 import com.example.materialdesign.utils.recycler.MyItemTouchHelper
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,6 +40,7 @@ class FragmentRecycler : Fragment(), ChosenDeck {
 
     private fun saveChoise() {
         chosenCards = adapter.getDeck()
+        CardRepository.instance.cards = chosenCards
         Toast.makeText(context, "Выбор сохранен", Toast.LENGTH_SHORT).show()
     }
 
