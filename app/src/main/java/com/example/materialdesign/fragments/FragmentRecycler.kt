@@ -39,8 +39,8 @@ class FragmentRecycler : Fragment(), ChosenDeck {
     }
 
     private fun saveChoise() {
-        chosenCards = adapter.getDeck()
-        CardRepository.instance.cards = chosenCards
+//        chosenCards = adapter.getDeck()
+        CardRepository.instance.cards = adapter.chosenCards
         Toast.makeText(context, "Выбор сохранен", Toast.LENGTH_SHORT).show()
     }
 

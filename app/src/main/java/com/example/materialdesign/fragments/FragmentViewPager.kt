@@ -27,8 +27,8 @@ class FragmentViewPager : Fragment() {
 
     private fun initAdapter(viewPager: ViewPager) {
         val adapter = MyPagerAdapter(childFragmentManager)
+        adapter.addFragment(FragmentRecyclerChosen())
         adapter.addFragment(newInstance("First", Color.CYAN))
-        adapter.addFragment(initFragmentRecyclerChoosen())
         adapter.addFragment(newInstance("Third", Color.GREEN))
         viewPager.adapter = adapter
         viewPager.setPageTransformer(false, DepthTransformer())
@@ -39,9 +39,9 @@ class FragmentViewPager : Fragment() {
         return fragment
     }
 
-    fun initFragmentRecyclerChoosen(): FragmentRecyclerChosen {
-        val fragment = FragmentRecyclerChosen()
-        fragment.chosenCards = getCards()
-        return fragment
-    }
+//    fun initFragmentRecyclerChoosen(): FragmentRecyclerChosen {
+//        val fragment = FragmentRecyclerChosen()
+//        fragment.chosenCards = getCards()
+//        return fragment
+//    }
 }

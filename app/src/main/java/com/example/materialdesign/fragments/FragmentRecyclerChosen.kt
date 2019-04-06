@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.R
 import com.example.materialdesign.model.Card
+import com.example.materialdesign.model.CardRepository
 import com.example.materialdesign.utils.recycler.CardRecyclerAdapter
 import com.example.materialdesign.utils.recycler.ChosenRecyclerAdapter
 import com.example.materialdesign.utils.recycler.MyItemTouchHelper
 
 class FragmentRecyclerChosen() : Fragment() {
 
-    var chosenCards = ArrayList<Card>()
+    private var chosenCards = ArrayList<Card>()
     lateinit var recycler: RecyclerView
     internal lateinit var adapter: ChosenRecyclerAdapter
 
@@ -23,6 +24,7 @@ class FragmentRecyclerChosen() : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_recycler_chosen, container, false)
 
+        chosenCards = CardRepository.instance.cards
         adapter = ChosenRecyclerAdapter(this, chosenCards)
         recycler = view.findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(view.context)

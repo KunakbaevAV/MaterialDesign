@@ -19,7 +19,7 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
     : RecyclerView.Adapter<CardViewHolder>(), ChosenDeck {
 
     private val cards = getCards()
-    val chosenCards = cards
+    val chosenCards = ArrayList<Card>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card, parent, false)
@@ -27,12 +27,24 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
+        initCardHolder(position, holder)
+        initChipListener(position, holder)
+    }
+
+    private fun initChipListener(position: Int, holder: CardViewHolder) {
+        val name = holder.textTitle.text
+        holder.chip.setOnCheckedChangeListener { buttonView, isChecked ->
+            chosenCards.add(cards.get(position))
+            myToast("$name добавлен в избранное")
+        }
+    }
+
+    private fun initCardHolder(position: Int, holder: CardViewHolder) {
         val card = cards[position]
         holder.textTitle.text = card.title
         holder.textDescription.text = card.description
         holder.imageView.setImageResource(card.image)
         holder.itemView.setOnClickListener { _ -> showDetails(position) }
-        holder.chip.setOnCheckedChangeListener { buttonView, isChecked -> myToast("$isChecked") }
     }
 
     private fun myToast(text: String) {
@@ -75,7 +87,7 @@ internal class CardRecyclerAdapter(private val parent: FragmentRecycler)
     }
 
     override fun getDeck(): ArrayList<Card> {
-        return cards
+        return chosenCards
     }
 }
 
